@@ -78,3 +78,7 @@ WITH RECURSIVE months AS(
 SELECT  *
 FROM ccr_per_month
 
+<<<<<<< HEAD:Ravenstack.sql
+=======
+SHOW WARNINGS;
+>>>>>>> 97f0c84e223dbdc0b88fe9704032a32c86b60cb3:Ravenstack Analysis/Ravenstack.sql
