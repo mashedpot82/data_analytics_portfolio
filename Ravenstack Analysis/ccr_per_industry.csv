@@ -1,4 +1,6 @@
-plan_tier,churned_customers,total_customers,CCR
-Basic,37,168,22.0238
-Enterprise,34,154,22.0779
-Pro,39,178,21.9101
+industry,churned_customers,total_customers,CCR
+FinTech,25,112,22.3214
+HealthTech,21,96,21.8750
+Cybersecurity,16,100,16.0000
+DevTools,35,113,30.9735
+EdTech,13,79,16.4557

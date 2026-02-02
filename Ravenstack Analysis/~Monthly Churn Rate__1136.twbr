@@ -1,0 +1,889 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.25.1210.1815                               -->
+<workbook original-version='18.1' source-build='2025.3.1 (20253.25.1210.1815)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ccr_per_month' inline='true' name='federated.0agbc5e1c4e38x1eo18z70c066lk' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ccr_per_month' name='textscan.0jvll720iyr7qh0zka35d0j4re8t'>
+            <connection class='textscan' directory='C:/Users/ivann/Desktop/Data Analytics/RavenStack/data_analytics_portfolio/Ravenstack Analysis' filename='ccr_per_month.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0jvll720iyr7qh0zka35d0j4re8t' name='ccr_per_month.csv' table='[ccr_per_month#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+            <column datatype='date' name='month_start' ordinal='0' />
+            <column datatype='integer' name='churned_customers' ordinal='1' />
+            <column datatype='integer' name='active_customers' ordinal='2' />
+            <column datatype='real' name='CCR' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ccr_per_month.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₱&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PH&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month_start</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[month_start]</local-name>
+            <parent-name>[ccr_per_month.csv]</parent-name>
+            <remote-alias>month_start</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churned_customers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[churned_customers]</local-name>
+            <parent-name>[ccr_per_month.csv]</parent-name>
+            <remote-alias>churned_customers</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>active_customers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[active_customers]</local-name>
+            <parent-name>[ccr_per_month.csv]</parent-name>
+            <remote-alias>active_customers</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CCR</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CCR]</local-name>
+            <parent-name>[ccr_per_month.csv]</parent-name>
+            <remote-alias>CCR</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:active_customers:qk]&quot;' value='Active Customers' />
+          <alias key='&quot;[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:churned_customers:qk]&quot;' value='Churned Customers' />
+        </aliases>
+      </column>
+      <column datatype='real' default-format='n#,##0.00&quot;%&quot;;-#,##0.00&quot;%&quot;' name='[CCR]' role='measure' type='quantitative' />
+      <column caption='ccr_per_month.csv' datatype='table' name='[__tableau_internal_object_id__].[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]' role='measure' type='quantitative' />
+      <column caption='Active Customers' datatype='integer' name='[active_customers]' role='measure' type='quantitative' />
+      <column caption='Churned Customers' datatype='integer' name='[churned_customers]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='date' name='[month_start]' role='dimension' type='ordinal' />
+      <column-instance column='[active_customers]' derivation='Avg' name='[avg:active_customers:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[churned_customers]' derivation='Avg' name='[avg:churned_customers:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[month_start]' derivation='Month-Trunc' name='[tmn:month_start:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (MONTH(Month))' hidden='true' name='[Action (MONTH(Month))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[tmn:month_start:ok]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/ivann/AppData/Local/Temp/TableauTemp/#TableauTemp_1v1qx2g0gviz9g16ynjq81165rhi.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/02/2026 07:47:58 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>month_start</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[month_start]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>month_start</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ccr_per_month.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>churned_customers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[churned_customers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>churned_customers</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ccr_per_month.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>active_customers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[active_customers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>active_customers</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ccr_per_month.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CCR</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CCR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CCR</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ccr_per_month.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:active_customers:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:churned_customers:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='ccr_per_month.csv' id='ccr_per_month.csv_F2DBC8646D0948A08C4F9490F650F91C'>
+            <properties context=''>
+              <relation connection='textscan.0jvll720iyr7qh0zka35d0j4re8t' name='ccr_per_month.csv' table='[ccr_per_month#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+                  <column datatype='date' name='month_start' ordinal='0' />
+                  <column datatype='integer' name='churned_customers' ordinal='1' />
+                  <column datatype='integer' name='active_customers' ordinal='2' />
+                  <column datatype='real' name='CCR' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='ccr_per_industry' inline='true' name='federated.1pb00ev00nf8ji1df2hoy0buio2x' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ccr_per_industry' name='textscan.0m6hu3d0oz5hfw16guk0f1njjya6'>
+            <connection class='textscan' directory='C:/Users/ivann/Desktop/Data Analytics/RavenStack/data_analytics_portfolio/Ravenstack Analysis' filename='ccr_per_industry.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0m6hu3d0oz5hfw16guk0f1njjya6' name='ccr_per_industry.csv' table='[ccr_per_industry#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+            <column datatype='string' name='industry' ordinal='0' />
+            <column datatype='integer' name='churned_customers' ordinal='1' />
+            <column datatype='integer' name='total_customers' ordinal='2' />
+            <column datatype='real' name='CCR' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ccr_per_industry.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₱&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PH&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industry</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[industry]</local-name>
+            <parent-name>[ccr_per_industry.csv]</parent-name>
+            <remote-alias>industry</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>churned_customers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[churned_customers]</local-name>
+            <parent-name>[ccr_per_industry.csv]</parent-name>
+            <remote-alias>churned_customers</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_customers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_customers]</local-name>
+            <parent-name>[ccr_per_industry.csv]</parent-name>
+            <remote-alias>total_customers</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CCR</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CCR]</local-name>
+            <parent-name>[ccr_per_industry.csv]</parent-name>
+            <remote-alias>CCR</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='ccr_per_industry.csv' datatype='table' name='[__tableau_internal_object_id__].[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]' role='measure' type='quantitative' />
+      <column caption='Churned Customers' datatype='integer' name='[churned_customers]' role='measure' type='quantitative' />
+      <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+      <column caption='Total Customers' datatype='integer' name='[total_customers]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/ivann/AppData/Local/Temp/TableauTemp/#TableauTemp_0zhb8080oi995h10t0ed20hb961p.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/02/2026 08:21:50 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>industry</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[industry]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>industry</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ccr_per_industry.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>churned_customers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[churned_customers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>churned_customers</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ccr_per_industry.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_customers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_customers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_customers</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ccr_per_industry.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CCR</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CCR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CCR</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ccr_per_industry.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Philippines&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='ccr_per_industry.csv' id='ccr_per_industry.csv_D65DC15D56BC4B43BC0D02761D44844C'>
+            <properties context=''>
+              <relation connection='textscan.0m6hu3d0oz5hfw16guk0f1njjya6' name='ccr_per_industry.csv' table='[ccr_per_industry#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PH' separator=','>
+                  <column datatype='string' name='industry' ordinal='0' />
+                  <column datatype='integer' name='churned_customers' ordinal='1' />
+                  <column datatype='integer' name='total_customers' ordinal='2' />
+                  <column datatype='real' name='CCR' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.0agbc5e1c4e38x1eo18z70c066lk'>
+      <datasources>
+        <datasource caption='ccr_per_month' name='federated.0agbc5e1c4e38x1eo18z70c066lk' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0agbc5e1c4e38x1eo18z70c066lk'>
+        <column caption='Month' datatype='date' name='[month_start]' role='dimension' type='ordinal' />
+        <column-instance column='[month_start]' derivation='Quarter' name='[qr:month_start:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]'>
+        <groupfilter function='level-members' level='[qr:month_start:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_8D404215B5524D4E8DD0C42C136A20E0]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet=' Monthly Churn' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name=' Monthly Churn'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='20'>Churn Rate vs Month</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ccr_per_month' name='federated.0agbc5e1c4e38x1eo18z70c066lk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0agbc5e1c4e38x1eo18z70c066lk'>
+            <column datatype='real' default-format='n#,##0.00&quot;%&quot;;-#,##0.00&quot;%&quot;' name='[CCR]' role='measure' type='quantitative' />
+            <column-instance column='[CCR]' derivation='Avg' name='[avg:CCR:qk]' pivot='key' type='quantitative' />
+            <column caption='Month' datatype='date' name='[month_start]' role='dimension' type='ordinal' />
+            <column-instance column='[month_start]' derivation='MY' name='[my:month_start:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[month_start]' derivation='Quarter' name='[qr:month_start:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[month_start]' derivation='Month-Trunc' name='[tmn:month_start:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0agbc5e1c4e38x1eo18z70c066lk].[my:month_start:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[my:month_start:ok]' member='202305' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202306' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202307' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202308' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202309' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202310' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202311' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202312' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202401' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202402' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202403' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202404' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202405' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202406' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202407' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202408' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202409' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202410' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202411' />
+              <groupfilter function='member' level='[my:month_start:ok]' member='202412' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0agbc5e1c4e38x1eo18z70c066lk].[my:month_start:ok]</column>
+            <column>[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[tmn:month_start:qk]' scope='cols' value='Month' />
+            <format attr='width' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' value='68' />
+            <format attr='title' class='0' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' scope='rows' value='Churn Rate' />
+            <encoding attr='space' class='0' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' field-type='quantitative' max='45.0' min='0.0' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' scope='rows' value='true' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-weight' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[tmn:month_start:qk]' value='bold' />
+            <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[tmn:month_start:qk]' value='12' />
+            <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' value='12' />
+            <format attr='text-format' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' value='N' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[tmn:month_start:qk]' value='16' />
+            <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' value='16' />
+            <format attr='font-weight' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]</rows>
+        <cols>[federated.0agbc5e1c4e38x1eo18z70c066lk].[tmn:month_start:qk]</cols>
+      </table>
+      <simple-id uuid='{6AC3AA04-23AF-49D4-B5CC-BB8555EB726E}' />
+    </worksheet>
+    <worksheet name='Active and Churned Customers'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='18'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ccr_per_month' name='federated.0agbc5e1c4e38x1eo18z70c066lk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0agbc5e1c4e38x1eo18z70c066lk'>
+            <column caption='Active Customers' datatype='integer' name='[active_customers]' role='measure' type='quantitative' />
+            <column-instance column='[active_customers]' derivation='Avg' name='[avg:active_customers:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[churned_customers]' derivation='Avg' name='[avg:churned_customers:qk]' pivot='key' type='quantitative' />
+            <column caption='Churned Customers' datatype='integer' name='[churned_customers]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='date' name='[month_start]' role='dimension' type='ordinal' />
+            <column-instance column='[month_start]' derivation='Quarter' name='[qr:month_start:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:active_customers:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:churned_customers:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]</column>
+            <column>[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='field-labels-decoration'>
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' value='9' />
+          </style-rule>
+          <style-rule element='field-labels-spanner'>
+            <format attr='font-size' scope='cols' value='14' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='font-weight' scope='rows' value='bold' />
+            <format attr='font-size' scope='rows' value='14' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]' value='12' />
+            <format attr='font-weight' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]' value='bold' />
+            <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]' value='14' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[Multiple Values]' value='16' />
+            <format attr='font-weight' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[Multiple Values]' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0agbc5e1c4e38x1eo18z70c066lk].[Multiple Values]</rows>
+        <cols>([federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok] / [federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{71800527-4371-4329-ADE6-14A885B06B6A}' />
+    </worksheet>
+    <worksheet name='Chun Rate Card'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Tableau Semibold' fontsize='22'>CHURN RATE</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ccr_per_month' name='federated.0agbc5e1c4e38x1eo18z70c066lk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0agbc5e1c4e38x1eo18z70c066lk'>
+            <column datatype='real' default-format='n#,##0.00&quot;%&quot;;-#,##0.00&quot;%&quot;' name='[CCR]' role='measure' type='quantitative' />
+            <column-instance column='[CCR]' derivation='Avg' name='[avg:CCR:qk]' pivot='key' type='quantitative' />
+            <column caption='Month' datatype='date' name='[month_start]' role='dimension' type='ordinal' />
+            <column-instance column='[month_start]' derivation='Quarter' name='[qr:month_start:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='color' value='#f28e2b' />
+            <format attr='font-size' value='20' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='text-align' data-class='subtotal' value='center' />
+            <format attr='vertical-align' data-class='subtotal' value='center' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='text-orientation' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' value='0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#dfedeb' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='16' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0agbc5e1c4e38x1eo18z70c066lk].[avg:CCR:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{645EABD9-E801-48CE-8380-EF996289A23A}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ccr_per_industry' name='federated.1pb00ev00nf8ji1df2hoy0buio2x' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pb00ev00nf8ji1df2hoy0buio2x'>
+            <column datatype='real' name='[CCR]' role='measure' type='quantitative' />
+            <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+            <column-instance column='[industry]' derivation='None' name='[none:industry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CCR]' derivation='Sum' name='[sum:CCR:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1pb00ev00nf8ji1df2hoy0buio2x].[sum:CCR:qk]</rows>
+        <cols>[federated.1pb00ev00nf8ji1df2hoy0buio2x].[none:industry:nk]</cols>
+      </table>
+      <simple-id uuid='{CB55B515-102A-4889-A5D9-212EBB1AE553}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size minheight='560' minwidth='420' sizing-mode='range' />
+      <datasources>
+        <datasource caption='ccr_per_month' name='federated.0agbc5e1c4e38x1eo18z70c066lk' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0agbc5e1c4e38x1eo18z70c066lk'>
+        <column caption='Month' datatype='date' name='[month_start]' role='dimension' type='ordinal' />
+        <column-instance column='[month_start]' derivation='Quarter' name='[qr:month_start:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98518' id='5' param='horz' type-v2='layout-flow' w='99166' x='417' y='741'>
+            <zone h='98518' id='3' type-v2='layout-basic' w='63853' x='417' y='741'>
+              <zone h='98518' id='8' name=' Monthly Churn' w='63853' x='417' y='741'>
+                <layout-cache minheight='215' minwidth='169' type-h='scalable' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='678' h='98518' id='4' is-fixed='true' param='vert' type-v2='layout-flow' w='35313' x='64270' y='741'>
+              <zone fixed-size='154' h='15000' id='12' is-fixed='true' name='Chun Rate Card' w='35313' x='64270' y='741'>
+                <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='202' h='18704' id='13' is-fixed='true' param='horz' type-v2='layout-flow' w='35313' x='64270' y='15741'>
+                <zone fixed-size='191' h='18704' id='14' is-fixed='true' param='horz' type-v2='layout-flow' w='9948' x='64270' y='15741'>
+                  <zone h='13704' id='6' name='Active and Churned Customers' param='[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]' show-apply='true' type-v2='filter' w='9948' x='64270' y='15741'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone fixed-size='162' h='18704' id='7' is-fixed='true' name='Active and Churned Customers' pane-specification-id='0' param='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]' type-v2='color' w='8855' x='74218' y='15741'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='64814' id='1' name='Active and Churned Customers' w='35313' x='64270' y='34445'>
+                <layout-cache cell-count-w='2' minheight='229' non-cell-size-w='72' type-h='scalable' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{F4647D30-B2DF-4946-B5DA-878E62E7C602}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='worksheet' maximized='true' name='Active and Churned Customers'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{1833101D-4283-4978-9EF2-6411D2B6DA34}' />
+    </window>
+    <window class='worksheet' name=' Monthly Churn'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{63E47EC1-32B6-45FD-99E9-79D14F815DC1}' />
+    </window>
+    <window class='worksheet' name='Chun Rate Card'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{08ED9BF2-B35B-42E3-80D3-090FE36088A0}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name=' Monthly Churn'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Active and Churned Customers'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Chun Rate Card'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <device-preview selected='Desktop' visible='true'>
+        <device is-portrait='false' type='Desktop' />
+      </device-preview>
+      <simple-id uuid='{4A289367-7E40-41D0-92EC-5049CAB1C8DF}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F500BA53-2BBD-4E84-81AE-4D9C36FB5A24}' />
+    </window>
+  </windows>
+</workbook>
