@@ -26,7 +26,7 @@ WITH RECURSIVE months AS(
     
     
 	subscriptions_churn AS(
-			SELECT s.account_id,
+			SELECT a.account_id,
 					start_date,
 					end_date,
 					churn_date,
