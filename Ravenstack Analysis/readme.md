@@ -1,5 +1,5 @@
 # Customer Churn Analysis of the Ravenstack Company
-This folder contains a customer analysis of the ravenstack company using sql and tableau. 
+This folder contains a churn analysis of the ravenstack company using sql and tableau. 
 The goal of this project is to verify three hypotheses that I have regarding the ravenstack datase:
 1. Churn is denser in some industries: Most churn happens in one or two industries
 2. Churn is seasonal: Most churn happens in a particular set of months
