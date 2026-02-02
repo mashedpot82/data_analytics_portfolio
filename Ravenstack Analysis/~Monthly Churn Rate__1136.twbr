@@ -413,7 +413,7 @@
         <column-instance column='[month_start]' derivation='Quarter' name='[qr:month_start:ok]' pivot='key' type='ordinal' />
       </datasource-dependencies>
       <filter class='categorical' column='[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]'>
-        <groupfilter function='level-members' level='[qr:month_start:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <groupfilter function='member' level='[qr:month_start:ok]' member='4' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
       </filter>
     </shared-view>
   </shared-views>
@@ -516,7 +516,7 @@
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true' fontalignment='1' fontsize='18'>&lt;Sheet Name&gt;</run>
+            <run bold='true' fontalignment='1' fontsize='18'>Quarterly Active and Churned Customers</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -546,6 +546,9 @@
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[Multiple Values]' scope='rows' value='# of Customers' />
+          </style-rule>
           <style-rule element='field-labels-decoration'>
             <format attr='font-weight' value='bold' />
             <format attr='font-size' value='9' />
@@ -560,6 +563,7 @@
             <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]' value='12' />
             <format attr='font-weight' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[:Measure Names]' value='bold' />
             <format attr='font-size' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]' value='14' />
+            <format attr='font-weight' field='[federated.0agbc5e1c4e38x1eo18z70c066lk].[qr:month_start:ok]' value='bold' />
           </style-rule>
           <style-rule element='worksheet'>
             <format attr='display-field-labels' scope='cols' value='false' />
@@ -740,7 +744,7 @@
                 </zone>
               </zone>
               <zone h='64814' id='1' name='Active and Churned Customers' w='35313' x='64270' y='34445'>
-                <layout-cache cell-count-w='2' minheight='229' non-cell-size-w='72' type-h='scalable' type-w='cell' />
+                <layout-cache cell-count-w='2' minheight='209' non-cell-size-w='72' type-h='scalable' type-w='cell' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -762,7 +766,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='51'>
-    <window class='worksheet' maximized='true' name='Active and Churned Customers'>
+    <window class='worksheet' name='Active and Churned Customers'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -818,7 +822,7 @@
       </cards>
       <simple-id uuid='{63E47EC1-32B6-45FD-99E9-79D14F815DC1}' />
     </window>
-    <window class='worksheet' name='Chun Rate Card'>
+    <window class='worksheet' maximized='true' name='Chun Rate Card'>
       <cards>
         <edge name='left'>
           <strip size='160'>
