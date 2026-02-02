@@ -74,6 +74,7 @@ WITH RECURSIVE months AS(
 		ON a.month_start = c.month_start
 	),
     
+    
     ccr_per_industry AS(
 		SELECT c.industry, churned_customers, total_customers, churned_customers / total_customers * 100 AS CCR
         FROM (
@@ -107,5 +108,5 @@ WITH RECURSIVE months AS(
     )
     
 SELECT  *
-FROM ccr_per_month
+FROM ccr_per_industry
 
